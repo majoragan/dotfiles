@@ -1,1 +1,48 @@
-/home/majo/.config/starship.toml
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Change command timeout from 500 to 1000 ms
+command_timeout = 1000
+
+format = """\
+[╭╴](238)$env_var \
+$all[╰](238)$character"""
+
+#[env_var.STARSHIP_DISTRO]
+#format = '[$env_value](white)'
+#variable = "STARSHIP_DISTRO"
+#disabled = false
+
+#[os]
+#format = 'on [$name]($style)'
+#style = 'bold blue'
+#disabled = false
+
+#[os.symbols]
+#Windows = '者'
+
+[username]
+style_user = "green"
+style_root = "green"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = true
+format = "@ [$hostname](yellow) "
+disabled = false
+
+[package]
+disabled = true
+
+[aws]
+disabled = true
+
+[python]
+style = 'yellow'
+symbol = ' '
+format = '[(\($virtualenv\) )${symbol}${pyenv_prefix}(${version} )]($style)'
